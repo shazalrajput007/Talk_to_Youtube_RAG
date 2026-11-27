@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube RAG Assistant</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>🎬 YouTube Video Q&amp;A</h1>
+    <p>Paste a YouTube link, then ask anything about the video.</p>
+  </header>
+
+  <main class="container">
+    <!-- Step 1: video input -->
+    <section class="card">
+      <form id="url-form" class="url-form">
+        <input type="text" id="url-input" placeholder="https://www.youtube.com/watch?v=..." required />
+        <button type="submit" id="process-btn">Process Video</button>
+      </form>
+
+      <div id="video-info" class="video-info hidden">
+        <strong id="video-title"></strong>
+        <span id="video-status" class="badge"></span>
+      </div>
+
+      <div id="status" class="status"></div>
+    </section>
+
+    <!-- Step 2: chat -->
+    <section class="card">
+      <div class="chat-header">
+        <h2>Chat</h2>
+        <button id="clear-btn" class="secondary" type="button" disabled>Clear chat</button>
+      </div>
+
+      <div id="chat-box" class="chat-box">
+        <div class="empty">Process a video to start asking questions.</div>
+      </div>
+
+      <form id="chat-form" class="chat-form">
+        <input type="text" id="question-input" placeholder="Ask a question about the video..."
+               autocomplete="off" disabled />
+        <button type="submit" id="send-btn" disabled>Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
